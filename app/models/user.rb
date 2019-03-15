@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   belongs_to :role
+  has_many :posts
+  has_many :comments
 
   def self.billable
     # First iteration joins roles table onto users
