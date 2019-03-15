@@ -3,7 +3,8 @@ class User < ApplicationRecord
 
   def self.billable
     # First iteration joins roles table onto users
-    User.all.joins(:role).where(roles: { billable: true })
+    # User.all.joins(:role).where(roles: { billable: true })
+
     # Second iteration with Role.billable created in role.rb
     User.all.joins(:role).merge(Role.billable)
   end
